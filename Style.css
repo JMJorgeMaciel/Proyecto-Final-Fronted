@@ -1,0 +1,183 @@
+
+
+
+html { scroll-behavior: smooth; }
+
+
+/* NAV LINKS */
+.nav-link{
+position: relative;
+padding-bottom: 5px;
+transition: color .3s ease;
+}
+
+/* línea animada */
+.nav-link::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:0%;
+height:2px;
+background:#facc15;
+transition:width .3s ease;
+}
+
+ /* hover */
+.nav-link:hover{
+color:#facc15;
+}
+
+.nav-link:hover::after{
+width:100%;
+}
+
+/* efecto suave tipo glow */
+.nav-link:hover{
+text-shadow:0 0 8px rgba(250,204,21,0.6);
+}
+
+/* ----------------------------------------------- */
+
+.solution-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  transition: all .35s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: black;
+}
+
+/* ICONO  */
+.solution-card i {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: black;
+  transition: all .35s ease;
+}
+
+/* TEXTO */
+.solution-card p {
+  font-weight: 600;
+  transition: color .3s ease;
+}
+
+/* HOVER  */
+.solution-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: black;
+}
+
+/* ICONO + TEXTO EN HOVER */
+.solution-card:hover i,
+.solution-card:hover p {
+  color: #facc15;
+}
+
+/* BOTON DE WHATSAPP */
+@keyframes pulse-whatsapp {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34,197,94, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 15px rgba(34,197,94, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34,197,94, 0);
+  }
+}
+
+@keyframes float-whatsapp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.whatsapp-btn {
+ animation: pulse-whatsapp 2s infinite, float-whatsapp 3s ease-in-out infinite;
+}
+/* BASE ICONOS */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+/* COLORES + VARIABLE PARA LA ONDA */
+.facebook {
+  background: #1877f2;
+  --color: 24,119,242;
+}
+
+.instagram {
+  background: #e1306c;
+  --color: 225,48,108;
+}
+
+.youtube {
+  background: #ff0000;
+  --color: 255,0,0;
+}
+
+.twitter {
+  background: #000000;
+  --color: 0,0,0;
+}
+
+.linkedin {
+  background: #0a66c2;
+  --color: 10,102,194;
+}
+
+/* ANIMACIÓN PULSE PERSONALIZADA */
+@keyframes pulse-social {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(var(--color), 0.7);
+  }
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 15px rgba(var(--color), 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(var(--color), 0);
+  }
+}
+
+/* HOVER */
+.social-icon:hover {
+  animation: pulse-social 0.8s ease;
+  transform: scale(1.1);
+}
+  
+/* MENU MOBILE */
+.mobile-item{
+display:block;
+padding:14px 18px;
+border-radius:12px;
+background:#111827;
+font-weight:600;
+transition:.3s;
+}
+
+.mobile-item:hover{
+background:#facc15;
+color:black;
+transform:translateX(5px);
+}
